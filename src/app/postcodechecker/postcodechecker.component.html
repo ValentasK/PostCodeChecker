@@ -1,16 +1,20 @@
-
-
-
 <div>
-  <h1>{{ postCode | uppercase }} </h1>
+  <h1> PostCode: {{ postCode | uppercase }} </h1>
 
   <button (click)="check()">Check</button>
   <input type="text" [(ngModel)]="postCode">
+  <span class="invalidPostCode" *ngIf="!validPostCode && isItchecked">Post code not found</span>
+  <span *ngIf="validPostCode && isItchecked">&#9989;</span>
 
-  <button (click)="check2()">Check2</button>
-  <input type="text" [(ngModel)]="postCode">
+  <div *ngIf="validPostCode && isItchecked">
+    <H2>{{postCodeInfo.result.region}}</H2>
+    <h2>{{postCodeInfo.result.admin_ward}}</h2>
+    <h2>{{postCodeInfo.result.longitude}}</h2>
+    <h2>{{postCodeInfo.result.latitude}}</h2>
 
-  {{ postCodeInfo }}
 
+
+
+
+  </div>
 </div>
-

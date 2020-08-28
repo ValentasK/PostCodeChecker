@@ -10,32 +10,26 @@ export class PostcodecheckerComponent implements OnInit {
 
   constructor(private data:ServiceService) { }
 
-
  postCode: string ;
- postCodeInfo:any;
-
+ postCodeInfo: any;
+ validPostCode: boolean;
+ isItchecked: boolean = false;
 
   ngOnInit(): void {
   }
 
-
-
+  
   check(){
+    this.isItchecked = true;
     this.data.getPostCodeData(this.postCode).subscribe(data => {
-      this.postCodeInfo = data.status;
-      console.log(this.postCodeInfo);
-    });  
-  }
-  
-  
-  check2(){
-    this.data.getPostCodeData(this.postCode).subscribe(data => {
-      this.postCodeInfo.status = data.status;
-      console.log(this.postCodeInfo);
+     this.postCodeInfo = data;
+      console.log("Post code found");
+      this.validPostCode = true;
     },
      errorResp=>{
        console.log(errorResp);
-       console.log("batai");
+       console.log("post code not found");
+       this.validPostCode = false;
       });
   }
 }
