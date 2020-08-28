@@ -3,3 +3,13 @@
     padding-left: 7px;
 }
 
+.postcodebox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.red{
+    background-color: red;
+}

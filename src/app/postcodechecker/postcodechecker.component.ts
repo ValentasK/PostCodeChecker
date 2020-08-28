@@ -33,3 +33,7 @@ export class PostcodecheckerComponent implements OnInit {
       });
   }
 }
+
+ // service   getPostCodeData(postcode:string){
+ //   return this.http.get<any>("https://api.postcodes.io/postcodes/"+postcode);    
+ // }

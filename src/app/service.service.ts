@@ -11,4 +11,5 @@ export class ServiceService {
   getPostCodeData(postcode:string){
     return this.http.get<any>("https://api.postcodes.io/postcodes/"+postcode);    
   }
+
 }
