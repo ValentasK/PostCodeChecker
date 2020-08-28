@@ -12,7 +12,8 @@ export class PostcodecheckerComponent implements OnInit {
 
 
  postCode: string ;
- postCodeInfo:string;
+ postCodeInfo:any;
+
 
   ngOnInit(): void {
   }
@@ -23,11 +24,18 @@ export class PostcodecheckerComponent implements OnInit {
     this.data.getPostCodeData(this.postCode).subscribe(data => {
       this.postCodeInfo = data.status;
       console.log(this.postCodeInfo);
-    });
-
-     //// 
-    
+    });  
   }
   
-
+  
+  check2(){
+    this.data.getPostCodeData(this.postCode).subscribe(data => {
+      this.postCodeInfo.status = data.status;
+      console.log(this.postCodeInfo);
+    },
+     errorResp=>{
+       console.log(errorResp);
+       console.log("batai");
+      });
+  }
 }
