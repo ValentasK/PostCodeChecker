@@ -25,7 +25,8 @@ export class PostcodecheckerComponent implements OnInit {
       console.log(this.postCodeInfo);
     });
 
-  
+     //// 
+     ///////
   }
   
 
