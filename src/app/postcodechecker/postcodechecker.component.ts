@@ -26,7 +26,7 @@ export class PostcodecheckerComponent implements OnInit {
     });
 
      //// 
-     /////// testing blin dsfsdfsdfsdf
+    
   }
   
 
